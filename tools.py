@@ -3,7 +3,8 @@ from students import student_list
 
 @tool
 def attendance_calculator(total_classes:int,attended_classes:int)->str:
-    """Use to calculate attendance from total classes and number of attended classes"""
+    """Use to calculate attendance from total classes and number of attended classes
+    and calculate eligibility for exam"""
     attendance_percentage=(attended_classes/total_classes)*100
     if attendance_percentage>=75:
         status="Eligible for exam"

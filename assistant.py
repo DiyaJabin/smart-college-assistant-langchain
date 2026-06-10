@@ -24,8 +24,17 @@ agent_executor = AgentExecutor(  # Actually runs the agent
 def run_college_assistant():
     print(f"{'-' * 50}SMART COLLEGE ASSISTANT{'-' * 50}")
     while True:
-        user_input = input("Enter your query:")
+        print("Enter your query. Type END on a new line to submit:")
+        lines=[]
+        while True:
+            line=input()
+            if line.strip().lower()=="end":
+                break
+            lines.append(line)
+        user_input="\n".join(lines)
         if user_input.lower() in ["exit","quit","bye"]:
+            print("Thank you for using Smart College Assistant!")
+            print("Exiting....")
             break
         if not user_input: #If query is blank
             print("Please enter a query.")
@@ -39,6 +48,7 @@ def run_college_assistant():
             print("Thank you for using Smart College Assistant!")
             print("Exiting....")
             break
+        print(f"{'-'*100}")
 
 if __name__=="__main__":
     run_college_assistant()
